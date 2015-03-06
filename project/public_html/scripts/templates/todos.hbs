@@ -1,0 +1,12 @@
+{{#each todos}}
+<article class="todo" data-id='{{id}}'>
+    <div class="details">
+        <input type="checkbox">
+        <label>{{text}}</label>
+        <div class="controls">
+            <i class="control edit fa fa-pencil"></i>
+            <i class="control delete fa fa-trash"></i>
+        </div>
+    </div>
+</article>  
+{{/each}}

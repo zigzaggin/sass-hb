@@ -1,0 +1,152 @@
+@import "../_mixins/box";
+.todos {
+    .todo {
+        $h: 24px;
+        border-bottom: solid 1px $primary-gray;
+        @extend %clearfix;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        &.editting {
+            .details {
+                display: none;
+            }
+            .form {
+                display: block;
+            }
+        }
+        .form {
+            display: none;
+            padding: 7px;
+            padding-left: 39px;
+            position: relative;
+            input {
+                padding: 3px 5px;
+                font-size: 1em; 
+                border: none;
+                width: 100%;
+                outline: none;
+            }
+            .save {
+                position: absolute;
+                left: 11px;
+                top: 11px;
+                font-size: 1.4em;
+            }
+        }
+        &.ui-sortable-helper {
+            border: solid 1px $primary-gray;
+            background: white;
+        }
+        &.ui-sortable-placeholder {
+            background: lighten($primary-gray, 5%);
+            visibility: visible !important;
+        }
+        .status {
+            float: right;         
+        }
+        label {
+            padding:$padding $padding $padding $h + 20px;
+            display: block;
+            transition: .3s;
+            font-size: 1em;
+            transition: .3s;
+        }
+        input[type="checkbox"],
+        label::before {
+            width: $h;
+            height: $h;
+            top: 50%;
+            margin-top: -$h/2;
+            left: 10px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            opacity: 0;
+            display: inline-block;
+            vertical-align: middle;
+            z-index: 100;
+        }
+
+        label::before {
+            content: '';
+            border: 1px solid $primary-gray;
+            transition: opacity 0.3s;
+        }
+        input[type="checkbox"]:checked + label {
+            transition: .1s;
+            color: darken($primary-gray, 20%);
+        } 
+
+        svg {
+            position: absolute;
+            width: $h - 4px;
+            height: $h - 4px;
+            left: 12px;
+            margin-top: -($h  - 4px)/2;
+            top: 50%;
+            pointer-events: none;
+        }
+
+        svg path {
+            stroke: $accent-color;
+            stroke-width: 13px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+        &:hover {
+            .controls {
+                border-left-color: $accent-color;
+                transition: .3s;
+            }
+        }
+        &.controllable {
+
+            label {
+                transition: .3s;
+                padding-left: 10px;
+                &:before {
+                    display: none;
+                }
+            }
+            .controls {
+                border-left-color: $accent-color;
+                right: 0;
+                transition: .3s;
+                background: lighten($accent-color, 10%);
+            }
+        }
+        .controls {
+            $width: 88px;
+            transition: .3s;
+            border-left: solid 5px transparent;
+            position: absolute;
+            width: $width;
+            right: (-$width + 5px);
+            height: 100%;
+            top: 0;
+            z-index: 999;
+            .control {
+                color: white;
+                font-size: 1.2em;
+                width: ($width - 5px)/2;
+                display: inline-block;
+                height: 44px;
+                line-height: 44px;
+                text-align: center;
+                float: left;
+                transition: .3s;
+                &:first-of-type {
+                    border-right: solid 1px lighten($accent-color, 5%);
+                }
+                &:hover {
+                    background: lighten($accent-color, 5%);                    
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}

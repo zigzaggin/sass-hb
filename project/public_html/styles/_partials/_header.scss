@@ -1,0 +1,77 @@
+.page-heading {
+    background: $heading-bg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    @extend %clearfix;
+    &.creating {
+        .create-wrap {
+            top: 100%;
+            transition: .1s;
+            opacity: 1;
+        }
+    }
+    .create-wrap {
+        display: block;
+        background: darken($heading-bg, 10%);
+        padding: 8px;
+        position: absolute;
+        width: 100%;
+        padding-right: 42px;
+        top: -100px;
+        transition: .3s;
+        opacity: 0;
+        .save {
+            position: absolute;
+            right: 11px;
+            color: white;
+            top: 11px;
+            font-size: 1.4em;
+            cursor: pointer;
+        }
+        input {
+            border: none;
+            background: darken($heading-bg, 20%);
+            outline: none;
+            color: white;
+            font-size: 1em;
+            padding: 3px 5px;
+            width: 100%;
+        }
+    }
+    .menu {
+        float: left;
+        padding: $padding $padding ($padding - 4px) ($padding + 1px);
+        i {
+            font-size: 1.6em;
+            color: $heading-color;
+        }
+    }
+    h1 {
+        float: left;
+        margin: 0;
+        font-size: 1.5em;
+        padding: $padding / 2 0;
+        color: $heading-color;
+    }
+    .create {
+        i {
+            padding: 11px 12px 10px 12px;
+            font-size: 1.4em;            
+            transition: .3s;
+        }
+        float: right;
+        color: $heading-color;
+        background: darken($heading-bg, 10%);
+        cursor: pointer;
+        &.rotate i {
+            $deg: 45deg;
+            -ms-transform: rotate($deg); /* IE 9 */
+            -webkit-transform: rotate($deg); /* Chrome, Safari, Opera */
+            transform: rotate($deg);
+            transition: .3s;
+        }
+    }
+}

@@ -1,0 +1,426 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden], template {
+  display: none; }
+
+html {
+  background: white;
+  color: black;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+body {
+  margin: 0; }
+
+a {
+  background: transparent; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal; }
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline; }
+
+button, input {
+  line-height: normal; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+body {
+  background: #ECECEC;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+
+.wrap {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+  background: #fafafc;
+  box-shadow: 0 1px 1px #caccd7; }
+  .wrap .todos-viewport {
+    margin-top: 43px;
+    height: 557px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: .1s; }
+    .wrap .todos-viewport::-webkit-scrollbar {
+      display: none; }
+  .wrap.creating .notes-viewport {
+    margin-top: 87px;
+    height: 513px;
+    transition: .1s; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after, .page-heading:after, .todos .todo:after {
+  display: table;
+  clear: both;
+  content: ""; }
+
+.loading {
+  background-image: url("bgs/spinner.gif");
+  background-position: center center;
+  background-size: 30px;
+  background-repeat: no-repeat; }
+
+.page-heading {
+  background: #f24c27;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; }
+  .page-heading.creating .create-wrap {
+    top: 100%;
+    transition: .1s;
+    opacity: 1; }
+  .page-heading .create-wrap {
+    display: block;
+    background: #d9320d;
+    padding: 8px;
+    position: absolute;
+    width: 100%;
+    padding-right: 42px;
+    top: -100px;
+    transition: .3s;
+    opacity: 0; }
+    .page-heading .create-wrap .save {
+      position: absolute;
+      right: 11px;
+      color: white;
+      top: 11px;
+      font-size: 1.4em;
+      cursor: pointer; }
+    .page-heading .create-wrap input {
+      border: none;
+      background: #a9270a;
+      outline: none;
+      color: white;
+      font-size: 1em;
+      padding: 3px 5px;
+      width: 100%; }
+  .page-heading .menu {
+    float: left;
+    padding: 10px 10px 6px 11px; }
+    .page-heading .menu i {
+      font-size: 1.6em;
+      color: white; }
+  .page-heading h1 {
+    float: left;
+    margin: 0;
+    font-size: 1.5em;
+    padding: 5px 0;
+    color: white; }
+  .page-heading .create {
+    float: right;
+    color: white;
+    background: #d9320d;
+    cursor: pointer; }
+    .page-heading .create i {
+      padding: 11px 12px 10px 12px;
+      font-size: 1.4em;
+      transition: .3s; }
+    .page-heading .create.rotate i {
+      -ms-transform: rotate(45deg);
+      /* IE 9 */
+      -webkit-transform: rotate(45deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(45deg);
+      transition: .3s; }
+
+.todos .todo {
+  border-bottom: solid 1px #e7e8ed;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; }
+  .todos .todo.editting .details {
+    display: none; }
+  .todos .todo.editting .form {
+    display: block; }
+  .todos .todo .form {
+    display: none;
+    padding: 7px;
+    padding-left: 39px;
+    position: relative; }
+    .todos .todo .form input {
+      padding: 3px 5px;
+      font-size: 1em;
+      border: none;
+      width: 100%;
+      outline: none; }
+    .todos .todo .form .save {
+      position: absolute;
+      left: 11px;
+      top: 11px;
+      font-size: 1.4em; }
+  .todos .todo.ui-sortable-helper {
+    border: solid 1px #e7e8ed;
+    background: white; }
+  .todos .todo.ui-sortable-placeholder {
+    background: #f6f6f8;
+    visibility: visible !important; }
+  .todos .todo .status {
+    float: right; }
+  .todos .todo label {
+    padding: 10px 10px 10px 44px;
+    display: block;
+    transition: .3s;
+    font-size: 1em;
+    transition: .3s; }
+  .todos .todo input[type="checkbox"],
+  .todos .todo label::before {
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    left: 10px;
+    position: absolute;
+    cursor: pointer; }
+  .todos .todo input[type="checkbox"] {
+    opacity: 0;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 100; }
+  .todos .todo label::before {
+    content: '';
+    border: 1px solid #e7e8ed;
+    transition: opacity 0.3s; }
+  .todos .todo input[type="checkbox"]:checked + label {
+    transition: .1s;
+    color: #adb0c1; }
+  .todos .todo svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    margin-top: -10px;
+    top: 50%;
+    pointer-events: none; }
+  .todos .todo svg path {
+    stroke: #037e8c;
+    stroke-width: 13px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none; }
+  .todos .todo:hover .controls {
+    border-left-color: #037e8c;
+    transition: .3s; }
+  .todos .todo.controllable label {
+    transition: .3s;
+    padding-left: 10px; }
+    .todos .todo.controllable label:before {
+      display: none; }
+  .todos .todo.controllable .controls {
+    border-left-color: #037e8c;
+    right: 0;
+    transition: .3s;
+    background: #04abbe; }
+  .todos .todo .controls {
+    transition: .3s;
+    border-left: solid 5px transparent;
+    position: absolute;
+    width: 88px;
+    right: -83px;
+    height: 100%;
+    top: 0;
+    z-index: 999; }
+    .todos .todo .controls .control {
+      color: white;
+      font-size: 1.2em;
+      width: 41.5px;
+      display: inline-block;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      float: left;
+      transition: .3s; }
+      .todos .todo .controls .control:first-of-type {
+        border-right: solid 1px #0494a5; }
+      .todos .todo .controls .control:hover {
+        background: #0494a5;
+        transition: .3s; }
+
+/*# sourceMappingURL=styles.css.map */

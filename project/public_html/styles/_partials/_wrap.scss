@@ -1,0 +1,36 @@
+body {
+    background: #ECECEC;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.wrap {
+    position: relative;
+    top: 100px;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    background: #fafafc;
+    box-shadow: 0 1px 1px darken($primary-gray, 10%);
+    .todos-viewport {   
+        margin-top: 43px;
+        height: 600px - 43px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        transition: .1s;
+        &::-webkit-scrollbar { 
+            display: none; 
+        }
+    }
+    &.creating {
+        .notes-viewport {
+            margin-top: 43px + 44px;
+            height: 600px - 43px - 44px;  
+            transition: .1s;
+        }
+    }
+}
